@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import kotlin.jvm.java
+import com.example.lab5.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val edtHoTen = findViewById<EditText>(R.id.edtHoTen)
+        val edtHoTen = findViewById<EditText>(R.id.edtHoten)
         val edtEmail = findViewById<EditText>(R.id.edtEmail)
         val edtSdt = findViewById<EditText>(R.id.edtSdt)
         val rgGioiTinh = findViewById<RadioGroup>(R.id.rgGioiTinh)
@@ -98,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                 .joinToString(", ") { it.text.toString() }
                 .ifEmpty { "Không chọn" }
 
-            val intent = Intent(this, DetailActivity::class.java)
+            val intent = Intent(this, MainActivity2_detail::class.java)
             intent.putExtra("HOTEN", hoTen)
             intent.putExtra("EMAIL", email)
             intent.putExtra("SDT", sdt)
